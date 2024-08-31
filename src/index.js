@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {choice, remove} from "./helpers"
+import foodArray from "./food"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const randomFruit = choice(foodArray); //this triggers the function found in the helpers
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const updatedArray = remove(foodArray, randomFruit);
+
+console.log(`I would like one ${randomFruit}, please`);
+console.log(`Here you go: ${randomFruit}`);
+console.log(`Delicious! May I have another?`)
+console.log(`I'm sorry, we're all out. we have ${foodArray.length} fruits left`);
+
+/*
+console.log(`the random fruit is: ${randomFruit}`);
+console.log(`Updated array after removing ${randomFruit}:`, updatedArray);
+*/
